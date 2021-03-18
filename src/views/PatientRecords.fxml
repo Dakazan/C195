@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="395.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.PatientRecordsController">
+   <children>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TableView fx:id="table" layoutX="42.0" layoutY="31.0" onMouseClicked="#handleRowAction" prefHeight="404.0" prefWidth="406.0" AnchorPane.bottomAnchor="-304.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-246.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="colId" prefWidth="81.2" text="ID" />
+                      <TableColumn fx:id="colName" prefWidth="81.2" text="Name" />
+                      <TableColumn fx:id="colPhone" prefWidth="81.2" text="Phone" />
+                      <TableColumn fx:id="colState" prefWidth="81.2" text="State" />
+                      <TableColumn fx:id="colInsurance" prefWidth="81.2" text="Insurance" />
+                    </columns>
+                  </TableView>
+               </children>
+      </AnchorPane>
+      <AnchorPane layoutX="334.0" prefHeight="404.0" prefWidth="265.0">
+         <children>
+            <TextField fx:id="patientId" alignment="CENTER" disable="true" editable="false" layoutX="199.0" layoutY="50.0" prefHeight="25.0" prefWidth="44.0" />
+            <Label layoutX="107.0" layoutY="54.0" text="Patient ID" />
+            <TextField fx:id="patientName" alignment="CENTER" layoutX="93.0" layoutY="80.0" promptText="Name" />
+            <TextField fx:id="patientInsurance" alignment="CENTER" layoutX="93.0" layoutY="110.0" promptText="Insurance" />
+            <TextField fx:id="patientAddressLine1" alignment="CENTER" layoutX="93.0" layoutY="140.0" promptText="Address Line 1" />
+            <TextField fx:id="patientAddressLine2" alignment="CENTER" layoutX="93.0" layoutY="170.0" promptText="Address Line 2" />
+            <TextField fx:id="patientCity" alignment="CENTER" layoutX="93.0" layoutY="200.0" promptText="City" />
+            <TextField fx:id="patientState" alignment="CENTER" layoutX="93.0" layoutY="230.0" promptText="State" />
+            <TextField fx:id="patientPostalCode" alignment="CENTER" layoutX="93.0" layoutY="260.0" promptText="Postal Code" />
+            <TextField fx:id="patientPhone" alignment="CENTER" layoutX="94.0" layoutY="290.0" promptText="Phone" />
+            <Button fx:id="updatePatient" layoutX="93.0" layoutY="337.0" mnemonicParsing="false" onAction="#updatePatientAction" prefHeight="25.0" prefWidth="149.0" text="Update Patient" />
+            <MenuBar layoutX="72.0" layoutY="2.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="196.0" snapToPixel="false">
+              <menus>
+                <Menu mnemonicParsing="false" text="Patient Options">
+                  <items>
+                    <MenuItem fx:id="addNewPatient" mnemonicParsing="false" onAction="#addPatientAction" text="Add New Patient" />
+                    <MenuItem fx:id="deletePatient" mnemonicParsing="false" onAction="#deletePatientAction" text="Delete Selected Patient" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+
+
+
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

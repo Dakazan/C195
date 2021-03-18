@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="395.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.AppointmentRecordsController">
+   <children>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TableView fx:id="table" layoutX="42.0" layoutY="31.0" onMouseClicked="#handleRowAction" prefHeight="404.0" prefWidth="406.0" AnchorPane.bottomAnchor="-304.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-246.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="colName" prefWidth="101.5" text="Patient" />
+                      <TableColumn fx:id="colType" prefWidth="81.5" text="Type" />
+                      <TableColumn fx:id="colNotes" prefWidth="101.5" text="Notes" />
+                      <TableColumn fx:id="colStartTime" prefWidth="121.5" text="Start Time" />
+                    </columns>
+                  </TableView>
+               </children>
+      </AnchorPane>
+      <AnchorPane layoutX="406.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="404.0" prefWidth="194.0">
+         <children>
+            <TextField fx:id="patientName" alignment="CENTER" disable="true" editable="false" layoutX="21.0" layoutY="63.0" promptText="Patient" />
+            <TextArea fx:id="appointmentNotes" layoutX="21.0" layoutY="184.0" prefHeight="143.0" prefWidth="149.0" wrapText="true" />
+            <TextField fx:id="appointmentStartTime" alignment="CENTER" layoutX="21.0" layoutY="126.0" promptText="Start Time" />
+            <TextField fx:id="appointmentType" alignment="CENTER" layoutX="21.0" layoutY="95.0" promptText="Appointment Type" />
+            <Button fx:id="updateAppointment" layoutX="21.0" layoutY="337.0" mnemonicParsing="false" onAction="#updateAppointmentAction" prefHeight="25.0" prefWidth="149.0" text="Update Appointment" />
+            <MenuBar layoutY="2.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="193.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#addAppointmentAction" text="Add New Appointment" />
+                    <MenuItem mnemonicParsing="false" onAction="#deleteAppointmentAction" text="Delete Selected Appointment" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="160.0" prefHeight="17.0" prefWidth="149.0" text="Notes" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

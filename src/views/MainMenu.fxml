@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="402" minWidth="597" prefHeight="402.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.MainMenuController">
+   <children>
+      <TabPane prefHeight="402.0" prefWidth="597.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Dashboard">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane alignment="CENTER" layoutX="172.0" layoutY="104.0" prefHeight="166.0" prefWidth="254.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button id="loginButton" fx:id="logoutButton" mnemonicParsing="false" prefHeight="57.0" prefWidth="196.0" text="Logout" GridPane.rowIndex="1" />
+                              <Text fx:id="loggedUser" strokeType="OUTSIDE" strokeWidth="0.0" text="user" textAlignment="CENTER" wrappingWidth="247.13671875">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <padding>
+                              <Insets bottom="100.0" left="100.0" right="100.0" top="100.0" />
+                           </padding>
+                        </GridPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Patient Records">
+            <content>
+              <fx:include source="PatientRecords.fxml" />
+            </content>
+          </Tab>
+          <Tab text="Appointments">
+            <content>
+              <fx:include source="AppointmentRecords.fxml" />
+            </content>
+          </Tab>
+          <Tab text="Calendar">
+            <content>
+              <fx:include source="Calendar.fxml" />
+            </content>
+          </Tab>
+            <Tab text="Reports">
+                <content>
+                    <fx:include source="Reports.fxml" />
+                </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="395.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.AppointmentRecordsController">
+   <children>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TableView fx:id="table" layoutX="42.0" layoutY="31.0" onMouseClicked="#handleRowAction" prefHeight="404.0" prefWidth="406.0" AnchorPane.bottomAnchor="-304.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-246.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="colName" prefWidth="101.5" text="Patient" />
+                      <TableColumn fx:id="colType" prefWidth="81.5" text="Type" />
+                      <TableColumn fx:id="colNotes" prefWidth="101.5" text="Notes" />
+                      <TableColumn fx:id="colStartTime" prefWidth="121.5" text="Start Time" />
+                    </columns>
+                  </TableView>
+               </children>
+      </AnchorPane>
+      <AnchorPane layoutX="406.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="404.0" prefWidth="194.0">
+         <children>
+            <TextField fx:id="patientName" alignment="CENTER" disable="true" editable="false" layoutX="21.0" layoutY="43.0" prefHeight="25.0" prefWidth="150.0" promptText="Patient" />
+            <TextArea fx:id="appointmentNotes" layoutX="21.0" layoutY="189.0" prefHeight="143.0" prefWidth="149.0" wrapText="true" />
+            <Button layoutX="21.0" layoutY="337.0" mnemonicParsing="false" onAction="#updateAppointmentAction" prefHeight="25.0" prefWidth="149.0" text="Update Appointment" />
+            <MenuBar layoutY="2.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="202.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Appointment Options">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#addAppointmentAction" text="Add New Appointment" />
+                    <MenuItem mnemonicParsing="false" onAction="#deleteAppointmentAction" text="Delete Selected Appointment" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="171.0" prefHeight="17.0" prefWidth="149.0" text="Notes" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="appointmentStartTime" layoutX="21.0" layoutY="108.0" prefHeight="25.0" prefWidth="150.0" promptText="Start Date" />
+            <ComboBox fx:id="appointmentType" layoutX="21.0" layoutY="75.0" prefHeight="25.0" prefWidth="150.0" promptText="Appointment Type" />
+             <ComboBox fx:id="appointmentHour" layoutX="18.0" layoutY="140.0" prefHeight="27.0" prefWidth="69.0" promptText="Hour" />
+             <ComboBox fx:id="appointmentMinute" layoutX="94.0" layoutY="140.0" prefHeight="27.0" prefWidth="80.0" promptText="Minute" />
+            <Label layoutX="89.0" layoutY="145.0" text=":" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

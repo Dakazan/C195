@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.ReportsController">
+    <children>
+        <TabPane layoutY="-1.0" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Appointments by Type" onSelectionChanged="#sortByType">
+                    <TableView fx:id="appointmentByType" layoutY="30.0" prefHeight="369.0" prefWidth="600.0">
+                        <columns>
+                            <TableColumn fx:id="byType" prefWidth="75.0" text="Type" />
+                            <TableColumn fx:id="byTypeCount" prefWidth="75.0" text="Count" />
+                        </columns>
+                        <columnResizePolicy>
+                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                        </columnResizePolicy>
+                    </TableView>
+                </Tab>
+                <Tab text="Appointments by Counselor" onSelectionChanged="#sortByCounselor">
+                    <TableView fx:id="appointmentByCounselor" layoutY="30.0" prefHeight="369.0" prefWidth="600.0">
+                        <columns>
+                            <TableColumn fx:id="byCounselor" prefWidth="75.0" text="Counselor" />
+                            <TableColumn fx:id="byCounselorCount" prefWidth="75.0" text="Count" />
+                        </columns>
+                        <columnResizePolicy>
+                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                        </columnResizePolicy>
+                    </TableView>
+                </Tab>
+                <Tab text="Appointments by State" onSelectionChanged="#sortByState">
+                    <TableView fx:id="appointmentByState" layoutY="30.0" prefHeight="369.0" prefWidth="600.0">
+                        <columns>
+                            <TableColumn fx:id="byState" prefWidth="75.0" text="State" />
+                            <TableColumn fx:id="byStateCount" prefWidth="75.0" text="Count" />
+                        </columns>
+                        <columnResizePolicy>
+                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                        </columnResizePolicy>
+                    </TableView>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
